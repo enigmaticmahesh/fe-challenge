@@ -1,9 +1,10 @@
+import HomePage from './pages/home/home-page';
 import './App.scss';
 
 function App() {
   return (
     <>
-      <p>FE Challenge</p>
+      <HomePage />
     </>
   );
 }
