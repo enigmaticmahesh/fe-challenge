@@ -1,0 +1,38 @@
+import timeframes from '../../timeframes';
+import menu from '../../assets/menu.svg';
+import { Task } from '../../types';
+
+type TaskItemProps = {
+  task: Task;
+};
+
+const TaskItem = ({ task }: TaskItemProps) => {
+  return (
+    <div className="task__container">
+      <div className="task__data">
+        <div className="task__header">
+          <h5>{task.title}</h5>
+          <img src={menu} alt="menu" />
+        </div>
+        <div className="task__wrapper">
+          <div className="task__body">
+            <span className="task__completed">10</span>
+            Completed
+          </div>
+          <div className="task__desc">
+            last week: 4 <span className="only-desktop">Completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const TasksSection = () => {
+  const tasks = Object.values(timeframes).map((task, i) => (
+    <TaskItem key={i} task={task} />
+  ));
+  return <section className="tasks__section">{tasks}</section>;
+};
+
+export default TasksSection;

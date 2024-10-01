@@ -1,8 +1,5 @@
+import TasksSection from './tasks-section';
 import UserSection from './user-section';
-
-const TasksSection = () => {
-  return <div>Tasks Section</div>;
-};
 
 const HomePage = () => {
   return (

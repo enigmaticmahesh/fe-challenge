@@ -1,3 +1,14 @@
+@use "sass:map";
+
+$tasks: (
+    1: ("color": var(--primary-job), "bg": "./assets/job.svg"),
+    2: ("color": var(--primary-fun), "bg": "./assets/fun.svg"),
+    3: ("color": var(--primary-learning), "bg": "./assets/learning.svg"),
+    4: ("color": var(--primary-sport), "bg": "./assets/sport.svg"),
+    5: ("color": var(--primary-emails), "bg": "./assets/emails.svg"),
+    6: ("color": var(--primary-health), "bg": "./assets/health.svg")
+);
+
 .home__page {
     height: 100%;
     display: grid;
@@ -66,6 +77,77 @@
                     }
                 }
             }
+        }
+
+        .tasks__section {
+            --auto-grid-min-size: 300px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+            gap: .5rem;
+
+            @each $key, $task in $tasks {
+                .task__container:nth-child(#{$key}) {
+                    background-color: map.get($task, "color");
+                    background-image: url(map-get($map: $task, $key: "bg"));
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                }
+            }
+
+            .task__container {
+                display: flex;
+                align-content: flex-end;
+                flex-wrap: wrap;
+                border-radius: var(--border-radius);
+                min-height: 160px;
+                min-width: 245px;
+
+                .task__data {
+                    background-color: var(--neutral-dark-blue);
+                    flex: 1;
+                    padding: 1.5rem;
+                    border-radius: var(--border-radius);
+                    font-size: 18px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--neutral-light-dark-blue);
+                    }
+
+                    .task__header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        h5 {
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .task__wrapper {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .task__body {
+                            display: flex;
+                            align-items: center;
+                            gap: 1rem;
+
+                            span.task__completed {
+                                font-size: 3rem;
+                            }
+                        }
+
+                        .task__desc {
+                            font-size: 14px;
+                            color: var(--neutral-desaturated-blue);
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
