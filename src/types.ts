@@ -8,3 +8,4 @@ export type Task = {
     [T: string]: TimeFrame;
   };
 };
+export type TimeFrameType = 'daily' | 'weekly' | 'monthly' | string;

@@ -1,12 +1,22 @@
 import timeframes from '../../timeframes';
 import menu from '../../assets/menu.svg';
 import { Task } from '../../types';
+import useDataContext from '../../hooks/useDataContext';
+
+const TIMEFRAME_DESC: { [T: string]: string } = {
+  daily: 'Yesterday',
+  weekly: 'Last Week',
+  monthly: 'Last Month',
+};
 
 type TaskItemProps = {
   task: Task;
 };
 
 const TaskItem = ({ task }: TaskItemProps) => {
+  const { timeFrame } = useDataContext();
+  const currentCompleted = task.timeframes[timeFrame].current;
+  const previousCompleted = task.timeframes[timeFrame].previous;
   return (
     <div className="task__container">
       <div className="task__data">
@@ -16,11 +26,12 @@ const TaskItem = ({ task }: TaskItemProps) => {
         </div>
         <div className="task__wrapper">
           <div className="task__body">
-            <span className="task__completed">10</span>
+            <span className="task__completed">{currentCompleted}</span>
             Completed
           </div>
           <div className="task__desc">
-            last week: 4 <span className="only-desktop">Completed</span>
+            {TIMEFRAME_DESC[timeFrame]}: {previousCompleted}
+            <span className="only-desktop">Completed</span>
           </div>
         </div>
       </div>

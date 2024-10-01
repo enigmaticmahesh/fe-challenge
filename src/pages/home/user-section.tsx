@@ -1,11 +1,24 @@
 import avatar from '../../assets/avatar.png';
+import useDataContext from '../../hooks/useDataContext';
 const TIMEFRAME_VALUES = ['daily', 'weekly', 'monthly'];
 
 const UserSection = () => {
+  const { setTimeFrame, timeFrame } = useDataContext();
+  const handleTimeFrame: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+    setTimeFrame(e.currentTarget.value);
+  };
   const periods = TIMEFRAME_VALUES.map((tf, i) => {
+    const checked = timeFrame === tf;
     return (
       <div key={i} className="period">
-        <input type="radio" id={tf} name="period" value={tf} />
+        <input
+          type="radio"
+          id={tf}
+          name="period"
+          value={tf}
+          onChange={handleTimeFrame}
+          checked={checked}
+        />
         <label htmlFor={tf}>{tf}</label>
       </div>
     );
