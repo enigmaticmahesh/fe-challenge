@@ -1,3 +1,27 @@
-body {
-    background-color: red;
+@import url(https://fonts.bunny.net/css?family=rubik:300,400,500);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    --primary-blue: hsl(246, 80%, 60%);
+    --primary-job: hsl(15, 100%, 70%);
+    --primary-fun: hsl(195, 74%, 62%);
+    --neutral-desaturated-fun: hsl(198, 68%, 79%);
+    --primary-learning: hsl(348, 100%, 68%);
+    --primary-sport: hsl(145, 58%, 55%);
+    --primary-emails: hsl(264, 64%, 52%);
+    --primary-health: hsl(43, 84%, 65%);
+    --neutral-very-dark-blue: hsl(226, 43%, 10%);
+    --neutral-dark-blue: hsl(235, 46%, 20%);
+    --neutral-light-dark-blue: hsl(235, 43%, 35%);
+    --neutral-desaturated-blue: hsl(235, 45%, 61%);
+    --neutral-pale-blue: hsl(236, 100%, 87%);
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+    --white: #fff;
 }

@@ -8,10 +8,10 @@ const TasksSection = () => {
 
 const HomePage = () => {
   return (
-    <>
+    <div className="container">
       <UserSection />
       <TasksSection />
-    </>
+    </div>
   );
 };
 
