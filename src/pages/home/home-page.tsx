@@ -1,6 +1,4 @@
-const UserSection = () => {
-  return <div>User Section</div>;
-};
+import UserSection from './user-section';
 
 const TasksSection = () => {
   return <div>Tasks Section</div>;

@@ -24,6 +24,7 @@
     --mobile-width: 375px;
     --desktop-width: 1440px;
     --white: #fff;
+    --border-radius: 1rem;
 }
 
 html,
@@ -35,4 +36,8 @@ body,
 body {
     background-color: var(--neutral-very-dark-blue);
     color: var(--white);
+}
+
+img {
+    display: block;
 }
