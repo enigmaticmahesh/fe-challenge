@@ -25,3 +25,14 @@
     --desktop-width: 1440px;
     --white: #fff;
 }
+
+html,
+body,
+#root {
+    height: 100dvh;
+}
+
+body {
+    background-color: var(--neutral-very-dark-blue);
+    color: var(--white);
+}

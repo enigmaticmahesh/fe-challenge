@@ -1,0 +1,11 @@
+.home__page {
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+    .container {
+        display: flex;
+        gap: .5rem;
+        flex-wrap: wrap;
+    }
+}
