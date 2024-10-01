@@ -9,6 +9,10 @@ $tasks: (
     6: ("color": var(--primary-health), "bg": "./assets/health.svg")
 );
 
+span.only-desktop {
+    display: none;
+}
+
 .home__page {
     height: 100%;
     display: grid;
@@ -20,6 +24,7 @@ $tasks: (
         flex-wrap: wrap;
 
         .user__section {
+            width: 100%;
             background-color: var(--neutral-dark-blue);
             border-radius: var(--border-radius);
 
@@ -37,6 +42,7 @@ $tasks: (
                     height: 92px;
                     overflow: hidden;
                     border-radius: 50%;
+                    min-width: 90px;
 
                     img {
                         width: inherit;
@@ -148,6 +154,50 @@ $tasks: (
                 }
             }
 
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    span.only-desktop {
+        display: inline-block;
+    }
+
+    .home__page {
+        .container {
+            .user__section {
+                width: 25%;
+
+                .user__data {
+                    display: block;
+
+                    p {
+                        margin-block: 2rem;
+                    }
+                }
+
+                .user__period {
+                    display: block;
+                }
+            }
+
+            .tasks__section {
+                grid-template-columns: repeat(3, 1fr);
+
+                .task__container {
+                    .task__data {
+                        .task__header {
+                            margin-bottom: 2rem;
+                        }
+
+                        .task__wrapper {
+                            flex-direction: column;
+                            align-items: normal;
+                            gap: 1rem;
+                        }
+                    }
+                }
+            }
         }
     }
 }
