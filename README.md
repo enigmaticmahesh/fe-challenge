@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
+## Getting Started
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To setup the project, follow these simple steps.
 
-Currently, two official plugins are available:
+### Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Should have **yarn** installed in the system.
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repo
 
-- Configure the top-level `parserOptions` property like this:
+   ```sh
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   git clone https://github.com/enigmaticmahesh/fe-challenge.git
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. Run the following commands:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   ```sh
+
+   yarn
+   yarn dev
+
+   ```
+
+## Usage
+
+App should be accessible at http://localhost:5173/ if everything works well.
+
+## Questions & Answers
+
+### What was the most difficult part of this challenge?
+
+Making the data section of the each task to the bottom of each container and making them responsive as well. I did use a solution to make it happen, but it still needs to be optimized/corrected.
+
+### What was the easiest part of this challenge?
+
+This seems to be a tricky question 😅. Truly speaking, I never thought this to be hard. But, as I progressed on trying to bring the design to code. It was getting hard for me, atleast some part of it. This always happens to me. Seems like I need to work on my designing skills. I am more of a developer and was an OK designer. For me, this design seems to be normal, but when I tried, I got to know more things.
+
+## ADDITIONAL NOTE
+
+1. I had already coded the design and forgot that I had to push the commits so that it would help in the evaluation. Sorry for that, but I tried to make the commits in such a way that atleast you can understand my approach.
+2. I thought of making the light and dark functionality as well, but it seems I ran out of time.
+3. Some of the colors were not mentioned in the style-guide.md, the hover states color were not mentioned, but anyway I applied it by inspecting the images/designs.

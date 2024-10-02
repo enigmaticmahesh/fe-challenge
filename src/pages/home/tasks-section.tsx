@@ -30,7 +30,7 @@ const TaskItem = ({ task }: TaskItemProps) => {
             Completed
           </div>
           <div className="task__desc">
-            {TIMEFRAME_DESC[timeFrame]}: {previousCompleted}
+            {TIMEFRAME_DESC[timeFrame]}: {previousCompleted}&nbsp;
             <span className="only-desktop">Completed</span>
           </div>
         </div>
